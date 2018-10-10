@@ -10,3 +10,12 @@ Sprint 1
 
  - Driver : Nithish Sanjeev Kumar
  - Navigator : Nantha Kumar Sunder
+
+## To Do List
+
+ - [ ]  Add UML diagrams 
+ - [ ]  Run cpplint, cppcheck
+ - [ ]  Google C++ style and doxygen
+ - [x]  Add google sheet link for the logs in readme
+ - [X]  Add Collaborator
+
