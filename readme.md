@@ -19,3 +19,19 @@ Sprint 1
  - [x]  Add google sheet link for the logs in readme
  - [X]  Add Collaborator
 
+
+## OpenGL Installation
+
+Run the following commands in the terminal
+```
+sudo apt-get update
+sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+```
+
+To check if OpenGL is installed run the following
+
+```
+sudo apt install mesa-utils
+glxinfo | grep OpenGL
+```
+
