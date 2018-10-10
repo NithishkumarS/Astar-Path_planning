@@ -53,4 +53,15 @@ The link for the googledoc:
 https://docs.google.com/spreadsheets/d/1Ef-vPpexzwGPBfQgoCBKfasl7S51SkOQiOGoCKZNjUk/edit?usp=sharing
 ```
 
+## Standard install via command-line
+```
+git clone --recursive https://github.com/NithishkumarS/Astar-Path_planning.git
+cd <path to repository>
+mkdir build
+cd build
+cmake ..
+make
+Run tests: ./test/cpp-test
+Run program: ./app/shell-app
+```
 
