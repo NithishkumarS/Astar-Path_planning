@@ -35,3 +35,13 @@ sudo apt install mesa-utils
 glxinfo | grep OpenGL
 ```
 
+## Notes after Discussion(Sprint 1)
+
+ - Movement cost in the 3D grid are assigned as:
+	- Distance between two nodes sharing a side is 10
+	- Distance between two nodes sharing an edge is 14
+	- Distance between two nodes sharing a vertex is 17
+ - Include an option to select map.
+ - Implement a path planning function to publish the path by comparing the total costs of each node.
+
+
