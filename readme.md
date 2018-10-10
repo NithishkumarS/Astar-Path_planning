@@ -45,3 +45,12 @@ glxinfo | grep OpenGL
  - Implement a path planning function to publish the path by comparing the total costs of each node.
 
 
+## SIP Documentation
+
+The link for the googledoc:
+
+```
+https://docs.google.com/spreadsheets/d/1Ef-vPpexzwGPBfQgoCBKfasl7S51SkOQiOGoCKZNjUk/edit?usp=sharing
+```
+
+
