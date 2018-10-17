@@ -33,50 +33,87 @@
  */
 
 #pragma once
-#include <vector>
 
 /** @brief class that stores and computes the total cost, heuristic cost 
  *         and movement cost
  * 
- *  @param parentNode    Parent node 3D vector 
- *  @param fValue        3D vector to hold the total cost of each node
- *  @param gValue        3D vector to hold the movement cost of each node
- *  @param hValue        3D vector to hold the heuristic cost of each node
- *  @param openList      Contains nodes in the open list 
- *  @param closedList    Contains nodes in the closed list
+ *  @param fValue        total cost of each node
+ *  @param gValue        movement cost of each node
+ *  @param xIndex        xIndex of node
+ *  @param yIndex        yIndex of nodde
+ *  @param zIndex        zIndex of node 
  * 
  *  @return none
  */
 
 class node {
+ private:
+  int xIndex;
+  int yIndex;
+  int zIndex;
+  int gValue;
+  int fValue;
+
  public:
-  /** Identifiers for fValue, gValue, hValue, lists and parentNodes
+    /**@brief function to set the private members start
+   * @param xStart
+   * @param yStart
+   * @param zStart
+   * @return none
    */
-  std::vector<std::vector<std::vector<int> > > parentNode;
-  std::vector<std::vector<std::vector<int> > > fValue;
-  std::vector<std::vector<std::vector<int> > > gValue;
-  std::vector<std::vector<std::vector<int> > > hValue;
-  std::vector<std::vector<int> > openList, closedList;
-
-  /**@brief function to compute the total cost
-   * @param movement cost
-   * @param heuristic cost
-   * @return a int value containing the total cost
+  node(int, int, int, int, int);
+  /**@brief function to set the private members start
+   * @param xStart
+   * @param yStart
+   * @param zStart
+   * @param Value
+   * @return none
    */
-  int fValueCalculation(int, int);
-
-  /**@brief function to compute the heuristic cost
-   * @param object of class environment
-   * @param current position vector
-   * @param goal vector
-   * @return a int value containing the heuristic cost
+  int getxIndex();
+    /**@brief function to get x IndexValue
+   * @param none
+   * @return xIndex
    */
-  int hValueCalculation(environment, std::vector<int>, std::vector<int>);
-
-  /**@brief function to compute the movement cost
-   * @param object of the class environment
-   * @param current node
-   * @return a int value which is the movement cost
+  int getyIndex();
+  /**@brief function to to get y IndexValue
+   * @param none
+   * @return yIndex
    */
-  int gValueCalculation(environment, std::vector<int>);
+   int getzIndex();
+  /**@brief function to get z IndexValue
+   * @param none
+   * @return zIndex
+   */
+   int getgValue();
+  /**@brief function to get gValue
+   * @param none
+   * @return int
+   */
+   int getfValue() const;
+  /**@brief function to calculate fValue
+   * @param xStart
+   * @param yStart
+   * @param zStart
+   * @return none
+   */
+   void fValueCalculation(int, int, int);
+  /**@brief function to calculate gValue
+   * @param xCurrent
+   * @param ycurrent
+   * @param zcurrent
+   * @return none
+   */
+  void gValueCalculation(int, int, int);
+  /**@brief function to calculate hValue
+   * @param xStart
+   * @param yStart
+   * @param zStart
+   * @return none
+   */
+  int hValueCalculation(int, int, int);
+  /**@Destructor
+   * @param none
+   * @return none
+   */
+   ~node();
 };
