@@ -79,24 +79,24 @@ class node {
    * @param none
    * @return yIndex
    */
-   int getzIndex();
+  int getzIndex();
   /**@brief function to get z IndexValue
    * @param none
    * @return zIndex
    */
-   int getgValue();
+  int getgValue();
   /**@brief function to get gValue
    * @param none
    * @return int
    */
-   int getfValue() const;
+  int getfValue() const;
   /**@brief function to calculate fValue
    * @param xStart
    * @param yStart
    * @param zStart
    * @return none
    */
-   void fValueCalculation(int, int, int);
+  void fValueCalculation(int, int, int);
   /**@brief function to calculate gValue
    * @param xCurrent
    * @param ycurrent
@@ -115,5 +115,5 @@ class node {
    * @param none
    * @return none
    */
-   ~node();
+  ~node();
 };
