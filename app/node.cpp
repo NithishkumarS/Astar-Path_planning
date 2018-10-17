@@ -22,26 +22,57 @@
  * SOFTWARE.
  */
 
-/** @file main.cpp
- * 
+/**@file node.cpp
+ *
  * @brief To find the shortest path using Astar algorithm
- * 
- * @author Nithish Sanjeev Kumar
- * @navigator Nantha Kumar Sunder
+ *
+ * @author Nantha Kumar Sunder
+ * @navigator Nithish Sanjeev Kumar
  * @copyright 2018 , Nithish Sanjeev Kumar, Nantha Kumar Sunder All rights reserved
- */
 
+ */
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+#include <node.hpp>
 #include "../include/aStar.hpp"
-#include "../include/node.hpp"
-#include<iostream>
 
-/** @brief Ask user for start and goal points to compute the path
- *  @param none
- *  @return none
- */
-
-int main() {
-  aStar aStar1;
-  aStar1.pathPlanning();
-  return 0;
+node::node(int _xIndex_, int _yIndex_, int _zIndex_, int _gValue_,
+           int _fValue_) {
+  xIndex = _xIndex_;
+  yIndex = _yIndex_;
+  zIndex = _zIndex_;
+  gValue = _gValue_;
+  fValue = _fValue_;
 }
+
+int node::getxIndex() {
+  return xIndex;
+}
+int node::getyIndex() {
+  return yIndex;
+}
+int node::getzIndex() {
+  return zIndex;
+}
+int node::getgValue() {
+  return gValue;
+}
+int node::getfValue() const {
+  return fValue;
+}
+void node::fValueCalculation(int xTarget, int yTarget, int zTarget) {
+  fValue = gValue + hValueCalculation(xTarget, yTarget, zTarget) * 10;
+}
+void node::gValueCalculation(int xValue, int yValue, int zValue) {
+  gValue += (sqrt(xValue * xValue + yValue * yValue + zValue * zValue) * 10);
+}
+int node::hValueCalculation(int xTarget, int yTarget, int zTarget) {
+  int xDiff, yDiff, zDiff, totalDiff;
+  xDiff = xTarget - xIndex;
+  yDiff = yTarget - yIndex;
+  zDiff = zTarget - zIndex;
+  totalDiff = (sqrt(xDiff * xDiff + yDiff * yDiff + zDiff * zDiff));
+  return (totalDiff);
+}
+node::~node() {}
