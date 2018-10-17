@@ -32,13 +32,52 @@
 
  */
 #include <gtest/gtest.h>
+#include "aStar.hpp"
+#include "node.hpp"
+#include <vector> 
 
-/** @brief Template for test to be written
+/** @brief Test for checking the accessibility of class aStar's members
  *  @param none
  *  @return none
  */
-TEST(dummy, should_pass) {
-  /**
-   * Tests will be updated
-   */
+TEST(classAStarCheck, testToFindVariableAccessibility) {
+
+  aStar obj1; /*!< Object of the class aStar  */
+
+  obj1.setStart(0, 0, 0);
+  obj1.setGoal(3, 3, 3);
+  EXPECT_EQ(0, obj1.getxStart());
+  EXPECT_EQ(0, obj1.getyStart());
+  EXPECT_EQ(0, obj1.getzStart());
+  EXPECT_EQ(3, obj1.getzGoal());
 }
+
+/**
+ * @brief Test for checking the accessibility of class Node's members
+ * @param none
+ * @return none
+ */
+TEST(classNodeCheck, testToFindVariableAccessibility) {
+
+  node obj2;
+  obj2.node(0, 1, 2, 5, 10);
+  EXPECT_EQ(0, obj2.getxIndex());
+  EXPECT_EQ(2, obj2.getzIndex());
+  EXPECT_EQ(5, obj2.getgValue());
+  EXPECT_EQ(10, obj2.getfValue());
+
+}
+
+/**
+ * @brief Test for check cost computation of the algorithm
+ * @param current node
+ * @param target node
+ * @return none
+ */
+TEST(nodesSetCost, testCost) {
+  node node1;
+  node1.gValueCalculation(0, 1, 0);
+  node1.fValueCalculation(1, 1, 1);
+  EXPECT_EQ(node1.getfValue(), 24);
+}
+
