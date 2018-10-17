@@ -4,6 +4,21 @@
 [![Coverage Status](https://coveralls.io/repos/github/NithishkumarS/Astar-Path_planning/badge.svg?branch=master)](https://coveralls.io/github/NithishkumarS/Astar-Path_planning?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Overview
+
+ A* algorithm is widely algorithms in pathfinding and graph traversal, which is the process of computing a path between different points, called "nodes". Its has been used extensively due to its performance and accuracy.
+
+This github repository implements a path planning module that aids in providing the shortest path for a given initial position to target position in an known environment. By using Astar algorithm, it combines the best features of Dijkstra’s algorithm (favoring vertices that are closeto starting points) and data that Greedy Best-first-search uses (favoring vertices that are close to the goal).By considering the hueristic cost its able to provide efficient output.
+
+Heuristic cost is the direct shortest distance between the current node and the target node. 
+
+Here the 3D space is taken as grids. A 4x4x4 grid is taken and obstacles are randomly assigned.  Free spaces is taken as 0; Nodes with obstacles are taken as 1.  
+
+Features:
+
+If a known 3D map of the environment is provided as grids, best possible path is found in the static environment. This planned path could be used by aerial robots or manipulators.
+
+
 ## Group Information
 
 Sprint 1
@@ -11,29 +26,19 @@ Sprint 1
  - Driver : Nithish Sanjeev Kumar
  - Navigator : Nantha Kumar Sunder
 
+Sprint 2
+
+ - Driver : Nantha Kumar Sunder
+ - Navigator : Nithish Sanjeev Kumar
+
 ## To Do List
 
- - [x]  Add UML diagrams 
- - [x]  Run cpplint, cppcheck
- - [x]  Google C++ style and doxygen
- - [x]  Add google sheet link for the logs in readme
- - [X]  Add Collaborator
+ - [X]  Update UML diagrams 
+ - [ ]  Run cpplint, cppcheck
+ - [X]  Google C++ style and doxygen
+ - [X]  Unit test cases
+ - [ ]  Setting up demo
 
-
-## OpenGL Installation
-
-Run the following commands in the terminal
-```
-sudo apt-get update
-sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
-```
-
-To check if OpenGL is installed run the following
-
-```
-sudo apt install mesa-utils
-glxinfo | grep OpenGL
-```
 
 ## Notes after Discussion(Sprint 1)
 
@@ -44,6 +49,10 @@ glxinfo | grep OpenGL
  - Include an option to select map.
  - Implement a path planning function to publish the path by comparing the total costs of each node.
 
+## Notes after Discussion(Sprint 2)
+ - Develop small, repeatable and iterative functions
+ - 
+ -
 
 ## SIP Documentation
 
@@ -64,4 +73,27 @@ make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
+
+## Doxygen
+
+To install Doxygen
+```
+sudo apt install doxygen
+```
+once the installation is over we can generate the Doxygen documentation by running
+```
+doxygen ./Doxygen
+```
+
+## Demo
+
+To run the demo go to the project directory and enter
+```
+cd build
+./app/shell-app
+'''
+
+
+
+
 
